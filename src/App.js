@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { createGlobalStyle } from 'styled-components';
+
+import Sidebar from './Sidebar';
+import Content from './Content';
+import Header from './Header';
+import AppStyled from './styled/AppStyled';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: #fff;
+  }
+`
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <AppStyled>
+        <GlobalStyle />
+        <Header />
+        <Sidebar />
+        <Content />
+      </AppStyled>
     );
   }
 }
